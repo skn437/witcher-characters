@@ -1,12 +1,20 @@
+import HeadAll from "../../components/HeadAll";
+
 const Witchers = () => {
 
     return (
 
-        <div>
+        <>
 
-            <h1>Witchers</h1>
+            <HeadAll title="Characters"></HeadAll>
 
-        </div>
+            <div>
+
+                <h1>Characters</h1>
+
+            </div>
+
+        </>
 
     );
 
