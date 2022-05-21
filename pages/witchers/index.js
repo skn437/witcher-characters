@@ -1,6 +1,22 @@
 import HeadAll from "../../components/HeadAll";
+import styles from "../../styles/Characters.module.css";
+import Link from "next/link";
 
-const Witchers = () => {
+export const getStaticProps = async () => {
+
+    const res = await fetch("https://jsonplaceholder.typicode.com/users");
+
+    const data = await res.json();
+
+    return {
+
+        props: { witchers: data }
+
+    };
+
+};
+
+const Witchers = ({ witchers }) => {
 
     return (
 
@@ -11,6 +27,28 @@ const Witchers = () => {
             <div>
 
                 <h1>Characters</h1>
+
+                {witchers.length ? witchers.map(witcher => (
+
+                        <Link href={`/witchers/${witcher.id}`}>
+
+                            <div key={witcher.id} className={styles.character}>
+
+                                <p>{witcher.name}</p>
+
+                            </div>
+
+                        </Link>
+
+                    )) : 
+                
+                    <div className={styles.character}>
+
+                        <p>No Witcher Character Available</p>
+
+                    </div>
+                
+                }
 
             </div>
 
