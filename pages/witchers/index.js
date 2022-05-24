@@ -1,5 +1,5 @@
 import HeadAll from "../../components/HeadAll";
-import styles from "../../styles/Characters.module.css";
+import styles from "./index.module.scss";
 import Link from "next/link";
 
 export const getStaticProps = async () => {

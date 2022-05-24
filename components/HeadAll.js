@@ -7,6 +7,7 @@ const HeadAll = ({ title }) => {
         <Head>
 
             <title>Witcher | {title}</title>
+            <link rel="icon" href="/witcher.ico"></link>
 
         </Head>
 

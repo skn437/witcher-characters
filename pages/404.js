@@ -1,6 +1,6 @@
 import Link from "next/link";
 import HeadAll from "../components/HeadAll";
-import styles from "../styles/NotFound.module.css";
+import styles from "./404.module.scss";
 
 const NotFound = () => {
 
