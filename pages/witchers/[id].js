@@ -4,7 +4,7 @@ export const getStaticPaths = async () => {
 	const res = await fetch("https://jsonplaceholder.typicode.com/users");
 	const data = await res.json();
 
-	const paths = data.map((witcher) => {
+	const paths = data.map(witcher => {
 		return {
 			params: { id: witcher.id.toString() },
 		};
@@ -16,7 +16,7 @@ export const getStaticPaths = async () => {
 	};
 };
 
-export const getStaticProps = async (context) => {
+export const getStaticProps = async context => {
 	const id = context.params.id;
 
 	const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
