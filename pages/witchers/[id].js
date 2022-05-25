@@ -1,4 +1,5 @@
 import HeadAll from "../../components/HeadAll";
+import { useRouter } from "next/router";
 
 export const getStaticPaths = async () => {
 	const res = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -29,6 +30,10 @@ export const getStaticProps = async context => {
 };
 
 const Details = ({ witcher }) => {
+	const router = useRouter();
+
+	console.log(router);
+
 	return (
 		<>
 			<HeadAll title="Details"></HeadAll>
@@ -37,7 +42,9 @@ const Details = ({ witcher }) => {
 				<h2>{witcher.name}</h2>
 				<p>{witcher.email}</p>
 				<p>{witcher.website}</p>
-				<p>{witcher.address.city}</p>
+				<p> {witcher.address.city}</p>
+
+				<p>{router.query.id}</p>
 			</div>
 		</>
 	);

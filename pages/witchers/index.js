@@ -21,7 +21,7 @@ const Witchers = ({ witchers }) => {
 				<h1>Characters</h1>
 
 				{witchers.length ? (
-					witchers.map((witcher) => (
+					witchers.map(witcher => (
 						<Link href={`/witchers/${witcher.id}`} key={witcher.id}>
 							<div className={styles.character}>
 								<p>{witcher.name}</p>
